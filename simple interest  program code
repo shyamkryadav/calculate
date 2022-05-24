@@ -1,0 +1,66 @@
+from tkinter import *
+from tkinter import font
+root = Tk()
+root.geometry("500x600")
+root.title("Simple Interest")
+# root.config(background="pink")
+# add the background image in root
+# Add image file
+# bg = PhotoImage(file = "icon.jpg")
+  
+# pyinstaller --onefile -w 'simlpe_interest.py'
+# creating the int variable is 
+a=IntVar()
+b=IntVar()
+c=IntVar()
+d=IntVar()
+
+# create a heading
+heading = Label(root, text="Simple Interest",
+                font=("Arial", 30,"bold"), fg="#e61094", pady=10)
+heading.pack()
+
+pri = Label(root, text="Enter the principal Amount",
+            font=("Arial", 15,"bold"), fg="#e61094",)
+pri.pack()
+priInput = Entry(root, font=("Arial", 15,"bold"), fg="#e61094",textvariable=a)
+priInput.pack()
+
+time = Label(root, text="Enter the Time Duration",
+             font=("Arial", 15,"bold"), fg="#e61094",)
+time.pack()
+timeInput = Entry(root, font=("Arial", 15,"bold"), fg="#e61094",textvariable=b)
+timeInput.pack()
+
+rate = Label(root, text="Enter the Rate",
+             font=("Arial", 15,"bold"), fg="#e61094",)
+rate.pack()
+rateInput = Entry(root, font=("Arial", 15,"bold"), fg="#e61094",textvariable=c)
+rateInput.pack()
+
+def show():
+    p=a.get()
+    t=b.get()
+    r=c.get()
+    si=(p*t*r)/100
+    print("Developed by shyam sundar yadav")
+    d.set(si)
+
+def hide():
+    a.set("")
+    b.set("")
+    c.set("")
+    d.set("")
+#e61094
+# create the input button
+btn=Button(root,text="Simple Interest",font=("arial",15,"bold"),fg="#0331ff",command=show)
+btn.pack()
+
+btnhide=Button(root,text="Clear",font=("arial",15,"bold"),fg="red",command=hide)
+btnhide.pack()
+
+result = Entry(root, font=("Arial", 15,"bold"), fg="#03ff46",textvariable=d)
+result.pack()
+
+
+root.mainloop()
